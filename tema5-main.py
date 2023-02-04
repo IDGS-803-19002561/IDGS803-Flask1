@@ -11,7 +11,8 @@ def index():
 
 @app.route("/usuarios")
 def usaurios():
-    return render_template('archivo2.html')
+    lista1 = ['Español' , 'Ingles' , 'Quimica']
+    return render_template('archivo2.html', list=lista1)
 
     
 

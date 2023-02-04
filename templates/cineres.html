@@ -1,0 +1,56 @@
+{% extends "layout-c.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-8 m-auto ">
+            <div class="card ">
+                <form action="comprar" method="post">
+                    <div class="card-header p-4 text-center">
+                        <h4>Muchas Gracias @{{nombre}} por tu Compra!!</h4>
+                    </div>
+                    <div class="card-body">
+                        <table>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th style="width:50%">Numero de Boletos:</th>
+                                            <td>{{boletos}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:50%">Subtotal:</th>
+                                            <td>${{subtotal}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Descuento</th>
+                                            <td>${{descuento}}</td>
+                                        </tr>
+
+                                        {% if Tpago == 2 %}
+
+                                        <tr>
+                                            <th>Descuento Con Tu Tarjeta CINECO:</th>
+                                            <td>$5.80</td>
+                                        </tr>
+                                        {% endif %}
+
+                                        <tr>
+                                            <th>Total A Pagar:</th>
+                                            <td>${{total}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% for item in list %}
+<h5>{{item}}</h5>
+{% endfor %}
+
+{% endblock %}
